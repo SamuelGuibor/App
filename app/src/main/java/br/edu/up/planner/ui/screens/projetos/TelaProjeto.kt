@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 import br.edu.up.planner.ui.screens.util.PlannerTopBar
 
 @Composable
-fun TelaProjetos(drawerState: DrawerState) {
+fun TelaProjeto(drawerState: DrawerState) {
 
     Scaffold(
         topBar = {
@@ -29,7 +29,7 @@ fun TelaProjetos(drawerState: DrawerState) {
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Tela PROJETOS",
+                    text = "Tela Calorias",
                     Modifier.padding(30.dp),
                     fontSize = 40.sp
                 )

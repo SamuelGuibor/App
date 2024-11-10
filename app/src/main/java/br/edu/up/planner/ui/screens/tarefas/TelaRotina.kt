@@ -23,9 +23,7 @@ fun TelaRotina(
 ) {
 
     Scaffold(
-        topBar = {
-            PlannerTopBar(drawerState)
-        },
+
         content = { iPad ->
             iPad
             Column(
@@ -34,7 +32,7 @@ fun TelaRotina(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Tela ROTINA",
+                    text = "Tela Excluir Alimentos",
                     Modifier.padding(30.dp),
                     fontSize = 40.sp
                 )

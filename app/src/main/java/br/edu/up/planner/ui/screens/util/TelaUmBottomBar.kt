@@ -3,8 +3,11 @@ package br.edu.up.planner.ui.screens.util
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -19,7 +22,7 @@ import br.edu.up.planner.ui.screens.tarefas.TelaUm
 
 @Composable
 fun TelaUmBottomBar(navController: NavController) {
-    NavigationBar(containerColor = Color(0xFF98D2FF)) {
+    NavigationBar(containerColor = Color(0xFFE74545)) {
         NavigationBarItem(
             selected = true,
             onClick = {
@@ -27,38 +30,38 @@ fun TelaUmBottomBar(navController: NavController) {
             },
             icon = {
                 Icon(
-                    imageVector = Icons.Default.CheckCircle,
+                    imageVector = Icons.Default.Home,
                     contentDescription = "A",
                     modifier = Modifier.size(40.dp)
                 )
             },
-            label = { Text(text = "Afazeres") }
+            label = { Text(text = "Alimentos") }
         )
         NavigationBarItem(
-            selected = false,
+            selected = true,
             onClick = {
                 navController.navigate(TelaUm.TELA_ROTINA_ROUTE)
             }, icon = {
                 Icon(
-                    imageVector = Icons.Default.DateRange,
+                    imageVector = Icons.Default.Delete,
                     contentDescription = "B",
                     modifier = Modifier.size(40.dp)
                 )
             },
-            label = { Text(text = "Rotina") }
+            label = { Text(text = "Excluir") }
         )
         NavigationBarItem(
-            selected = false,
+            selected = true,
             onClick = {
                 navController.navigate(TelaUm.TELA_NOTAS_ROUTE)
             }, icon = {
                 Icon(
-                    imageVector = Icons.Default.Email,
+                    imageVector = Icons.Default.Create,
                     contentDescription = "C",
                     modifier = Modifier.size(40.dp)
                 )
             },
-            label = { Text(text = "Anotações") }
+            label = { Text(text = "Editar") }
         )
     }
 }

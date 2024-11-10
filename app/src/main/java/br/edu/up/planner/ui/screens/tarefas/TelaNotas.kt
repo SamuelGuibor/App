@@ -34,7 +34,7 @@ fun TelaNotas(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Tela ANOTAÇÕES",
+                    text = "Tela Editar Alimentos",
                     Modifier.padding(30.dp),
                     fontSize = 40.sp
                 )

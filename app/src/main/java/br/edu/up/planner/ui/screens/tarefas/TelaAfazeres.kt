@@ -5,14 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.DrawerState
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,14 +36,19 @@ fun TelaAfazeres(
 
     var afazeres = mutableListOf(
         Afazer(
-            titulo = "Comprar um carro",
-            descricao = "Visitar concessionárias",
+            titulo = "Receita 1:",
+            descricao = "Dieta Basica",
             id = 1
         ),
         Afazer(
-            titulo = "Lavar roupas",
-            descricao = "Lavar roupas pela manhã",
+            titulo = "Receita 2:",
+            descricao = "Dieta Diferenciada",
             id = 2
+        ),
+        Afazer(
+            titulo = "Receita 3:",
+            descricao = "Dieta Exigente",
+            id = 3
         )
     )
 
@@ -76,7 +76,6 @@ fun TelaAfazeres(
 
 
         },
-        floatingActionButton = { FloatButton() },
         bottomBar = { TelaUmBottomBar(navCtrlBottomNav) }
     )
 }
@@ -91,7 +90,11 @@ private fun TelaListagemAfazeres(afazeres: MutableList<Afazer>) {
         items(afazeres) { afazer ->
             Text(
                 text = afazer.titulo,
-                Modifier.padding(20.dp),
+                fontSize = 20.sp,
+                )
+            Spacer(modifier = Modifier.height(2.dp))
+            Text(
+                text = afazer.descricao,
                 fontSize = 20.sp
             )
         }
@@ -105,15 +108,5 @@ data class Afazer(
     var id: Int? = null
 )
 
-
-@Composable
-private fun FloatButton() {
-    FloatingActionButton(onClick = { }) {
-        Icon(
-            imageVector = Icons.Default.Add,
-            contentDescription = "+"
-        )
-    }
-}
 
 

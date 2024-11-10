@@ -31,8 +31,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import br.edu.up.planner.ui.screens.projetos.TelaProjetos
 import br.edu.up.planner.ui.screens.financas.TelaFinancas
+import br.edu.up.planner.ui.screens.projetos.TelaProjeto
 import br.edu.up.planner.ui.screens.tarefas.TarefasNavHost
 import kotlinx.coroutines.launch
 
@@ -68,9 +68,9 @@ fun PlannerNavDrawer(){
                     TarefasNavHost(drawerState)
                 }
                 composable(PlannerRotas.TELA_PROJETOS_ROTA) {
-                    TelaProjetos(drawerState)
+                    TelaProjeto(drawerState)
                 }
-                composable(PlannerRotas.TELA_FINANCAS_ROTA) {
+                composable(PlannerRotas.TELA_PROJETOS_ROTA) {
                     TelaFinancas(drawerState)
                 }
             }
@@ -82,7 +82,7 @@ fun PlannerNavDrawer(){
 private fun DrawerContent(
     navController: NavController,
     drawerState: DrawerState
-    ) {
+) {
 
     val coroutineScope = rememberCoroutineScope()
 
@@ -114,12 +114,12 @@ private fun DrawerContent(
             }) {
             Icon(
                 //imageVector = Icons.Default.Call,
-                painter = painterResource(id = R.drawable.checklist),
+                painter = painterResource(id = R.drawable.food),
                 contentDescription = "c",
                 modifier = Modifier.size(40.dp),
                 tint = getColorTexto(ehRotaUm)
             )
-            Text(text = "Tarefas", fontSize = 30.sp,
+            Text(text = "Receitas", fontSize = 30.sp,
                 color = getColorTexto(ehRotaUm))
         }
 
@@ -135,12 +135,12 @@ private fun DrawerContent(
             }) {
             Icon(
                 //imageVector = Icons.Default.Call,
-                painter = painterResource(id = R.drawable.checklist),
+                painter = painterResource(id = R.drawable.food),
                 contentDescription = "c",
                 modifier = Modifier.size(40.dp),
                 tint = getColorTexto(ehRotaDois)
             )
-            Text(text = "Projetos", fontSize = 30.sp,
+            Text(text = "Calorias", fontSize = 30.sp,
                 color = getColorTexto(ehRotaDois))
         }
         TextButton(
@@ -155,16 +155,19 @@ private fun DrawerContent(
             }) {
             Icon(
                 //imageVector = Icons.Default.Call,
-                painter = painterResource(id = R.drawable.checklist),
+                painter = painterResource(id = R.drawable.food),
                 contentDescription = "c",
                 modifier = Modifier.size(40.dp),
                 tint = getColorTexto(ehRotaTres)
             )
-            Text(text = "Finanças", fontSize = 30.sp,
+            Text(text = "Metas", fontSize = 30.sp,
                 color = getColorTexto(ehRotaTres))
+
         }
+
     }
 }
+
 
 fun getColorMenu(estaSelecionada: Boolean): Color {
     if (estaSelecionada){
